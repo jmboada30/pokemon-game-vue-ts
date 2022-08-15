@@ -19,13 +19,10 @@ import PokemonPicture from '../components/PokemonPicture.vue';
 import PokemonOptions from '../components/PokemonOptions.vue';
 
 const {
-  pokemonArr,
   pokemon,
-  showPokemon,
   showAnswer,
   message,
   mixPokemonArray,
-  checkAnswer,
   newGame,
 } = usePokemons();
 
