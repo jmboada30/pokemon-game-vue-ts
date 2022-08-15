@@ -2,7 +2,7 @@
   <h1 v-if="!pokemon">Por favor espere...</h1>
 
   <div v-else>
-    <h1>Quien es este Pokemon?</h1>
+    <h1>¿Quien es este Pokemon?</h1>
     <pokemon-picture
       :pokemonId="pokemon.id"
       :showPokemon="showPokemon"
@@ -19,6 +19,21 @@
   </div>
 </template>
 
-<script src="./PokemonPage.ts"></script>
+<script lang="ts" setup>
+import usePokemons from '../composables/usePokemons';
+import PokemonPicture from '../components/PokemonPicture.vue';
+import PokemonOptions from '../components/PokemonOptions.vue';
 
-<style></style>
+const {
+  pokemonArr,
+  pokemon,
+  showPokemon,
+  showAnswer,
+  message,
+  mixPokemonArray,
+  checkAnswer,
+  newGame,
+} = usePokemons();
+
+mixPokemonArray();
+</script>
