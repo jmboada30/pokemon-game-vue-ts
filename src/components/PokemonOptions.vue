@@ -2,9 +2,9 @@
   <div class="options-container">
     <ul>
       <li
-        v-for="pokemon in pokemons"
+        v-for="pokemon in pokemonArr"
         :key="pokemon.id"
-        @click="$emit('selection', pokemon.id)"
+        @click="checkAnswer(pokemon.id)"
       >
         {{ pokemon.name }}
       </li>
@@ -13,15 +13,11 @@
 </template>
 
 <script lang="ts" setup>
-import { Pokemon } from '../interfaces/pokemon';
-
-defineProps<{
-  pokemons: Pokemon[];
-}>();
+import usePokemons from '../composables/usePokemons';
+const { pokemonArr, checkAnswer } = usePokemons();
 </script>
 
 <style scoped>
-/* Pokemon Options */
 ul {
   list-style-type: none;
 }

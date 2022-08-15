@@ -1,6 +1,7 @@
 import { usePokemonStore } from '../stores/pokemonStore';
 import getPokemonOptions from '../helpers/getPokemonOptions';
 import { storeToRefs } from 'pinia';
+import { computed } from 'vue';
 
 const usePokemons = () => {
   const pokemonStore = usePokemonStore();
@@ -33,6 +34,12 @@ const usePokemons = () => {
     pokemonArr,
     showAnswer,
     showPokemon,
+
+    //* Computeds
+    imgSrc: computed(
+      () =>
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.value?.id}.svg`
+    ),
 
     //* Methods
     checkAnswer,
