@@ -1,7 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
 
-import './css/styles.css'
-import './css/animations.css'
+import { createPinia } from 'pinia';
 
-createApp(App).mount('#app')
+import App from './App.vue';
+import './css/styles.css';
+import './css/animations.css';
+
+createApp(App).use(createPinia()).mount('#app');
